@@ -6,6 +6,9 @@
 //
 
 #import "AppDelegate.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import "ViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -16,6 +19,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[IQKeyboardManager sharedManager] setEnable:YES];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]; //全屏window
+    self.window.backgroundColor = [UIColor whiteColor]; //白色背景
+    [self.window makeKeyAndVisible];
+    
+    ViewController *vc = [[ViewController alloc] init];
+    ExpressNaviViewController *expressNaviVC = [[ExpressNaviViewController alloc] initWithRootViewController:vc];
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    keyWindow.rootViewController = expressNaviVC;
+    [keyWindow makeKeyAndVisible];
+    
     return YES;
 }
 
