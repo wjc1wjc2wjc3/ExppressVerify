@@ -13,6 +13,7 @@
 		18AADA2A20A2EF8100C9B411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AADA2920A2EF8100C9B411 /* Assets.xcassets */; };
 		18AADA2D20A2EF8100C9B411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AADA2B20A2EF8100C9B411 /* LaunchScreen.storyboard */; };
 		18AADA3020A2EF8100C9B411 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AADA2F20A2EF8100C9B411 /* main.m */; };
+		B15979076E0A52B254341D24 /* Pods_ExpressVerify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E36CC6E401BC854A30E39 /* Pods_ExpressVerify.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		18AADA2C20A2EF8100C9B411 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18AADA2E20A2EF8100C9B411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18AADA2F20A2EF8100C9B411 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		65EB42854FF7D0C6FE69BED3 /* Pods-ExpressVerify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpressVerify.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExpressVerify/Pods-ExpressVerify.release.xcconfig"; sourceTree = "<group>"; };
+		8F8E36CC6E401BC854A30E39 /* Pods_ExpressVerify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExpressVerify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1FD9CD6E1E97C19AE385460 /* Pods-ExpressVerify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpressVerify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExpressVerify/Pods-ExpressVerify.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15979076E0A52B254341D24 /* Pods_ExpressVerify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				18AADA1F20A2EF7400C9B411 /* ExpressVerify */,
 				18AADA1E20A2EF7400C9B411 /* Products */,
+				A5623CD9C87D652F9F7089D4 /* Pods */,
+				A03CF667908B16B330E64B13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,23 @@
 			path = ExpressVerify;
 			sourceTree = "<group>";
 		};
+		A03CF667908B16B330E64B13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F8E36CC6E401BC854A30E39 /* Pods_ExpressVerify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5623CD9C87D652F9F7089D4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1FD9CD6E1E97C19AE385460 /* Pods-ExpressVerify.debug.xcconfig */,
+				65EB42854FF7D0C6FE69BED3 /* Pods-ExpressVerify.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +102,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18AADA3320A2EF8100C9B411 /* Build configuration list for PBXNativeTarget "ExpressVerify" */;
 			buildPhases = (
+				CB52524882E0CD10F4AE5F2B /* [CP] Check Pods Manifest.lock */,
 				18AADA1920A2EF7400C9B411 /* Sources */,
 				18AADA1A20A2EF7400C9B411 /* Frameworks */,
 				18AADA1B20A2EF7400C9B411 /* Resources */,
+				21A9F16A436F32168F75D879 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -134,6 +160,61 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21A9F16A436F32168F75D879 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ExpressVerify/Pods-ExpressVerify-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/LBXScan/LBXScan.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/ZBarSDK/ZBarSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LBXScan.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZBarSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExpressVerify/Pods-ExpressVerify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB52524882E0CD10F4AE5F2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExpressVerify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		18AADA1920A2EF7400C9B411 /* Sources */ = {
@@ -280,10 +361,11 @@
 		};
 		18AADA3420A2EF8100C9B411 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1FD9CD6E1E97C19AE385460 /* Pods-ExpressVerify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4598R7ZUAC;
 				INFOPLIST_FILE = ExpressVerify/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -292,17 +374,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hzbit.ExpressVerify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "d6f62ac4-dd93-4bd7-9a07-011de0fca860";
+				PROVISIONING_PROFILE_SPECIFIER = comhzbitExpressVerifyDev;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		18AADA3520A2EF8100C9B411 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65EB42854FF7D0C6FE69BED3 /* Pods-ExpressVerify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4598R7ZUAC;
 				INFOPLIST_FILE = ExpressVerify/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -311,8 +396,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hzbit.ExpressVerify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE = "1b386c85-9b1f-40c3-9c18-44b98cc5747d";
+				PROVISIONING_PROFILE_SPECIFIER = com.hzbit.ExpressVerifyAdHoc;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
