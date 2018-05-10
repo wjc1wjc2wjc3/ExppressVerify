@@ -11,28 +11,29 @@
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
     FindExpressViewModel *viewModel = [FindExpressViewModel mj_objectWithKeyValues:dictionary];
+    viewModel.findExpressData = [[FindExpressData alloc] initWithDictionary:viewModel.data];
     return viewModel;
 }
 
-- (NSURLSessionDataTask *)startRequest:(NSDictionary *)param token:(NSString *)tokens {
+- (NSURLSessionDataTask *)startRequest:(NSDictionary *)param {
     
     NSString *numbers = param[@"numbers"];
     NSString *suffix = [NSString stringWithFormat:@"%@/%@",FindExpress,numbers];
-    
-    return [APIManager SafePOSTWithJson:tokens url:[self formatUrl:suffix] parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
+    NSString *url = [self formatUrl:suffix];
+    return [APIManager SafeGET:url parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         
-        FindExpressViewModel *viewModel = [[FindExpressViewModel alloc] initWithDictionary:responseObject];
-        if (viewModel.message) {
-            [MBManager showBriefAlert:viewModel.message];
-        }
-        if (viewModel && viewModel.status == 0) {
-            if (self.bitSuccessBlock) {
-                self.bitSuccessBlock(viewModel);
+            FindExpressViewModel *viewModel = [[FindExpressViewModel alloc] initWithDictionary:responseObject];
+            if (viewModel.message) {
+                [MBManager showBriefAlert:viewModel.message];
             }
-        }
+            if (viewModel && viewModel.status == 1) {
+                if (self.bitSuccessBlock) {
+                    self.bitSuccessBlock(viewModel);
+                }
+            }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {
-        [MBManager showBriefAlert:error.localizedDescription];
+            [MBManager showBriefAlert:error.localizedDescription];
     }];
     
 }

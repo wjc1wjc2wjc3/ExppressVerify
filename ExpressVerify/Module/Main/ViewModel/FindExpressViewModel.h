@@ -6,13 +6,15 @@
 //
 
 #import "ExpressViewModel.h"
+#import "FindExpressData.h"
 
 @interface FindExpressViewModel : ExpressViewModel
 
-@property (nonatomic, strong) NSDictionary *data;
+@property (nonatomic, strong) FindExpressData *findExpressData;
+@property (nonatomic, weak) NSDictionary *data;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-- (NSURLSessionDataTask *)startRequest:(NSDictionary *)param token:(NSString *)tokens;
+- (NSURLSessionDataTask *)startRequest:(NSDictionary *)param;
 
 @end

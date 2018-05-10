@@ -26,8 +26,10 @@
     self.window.backgroundColor = [UIColor whiteColor]; //白色背景
     [self.window makeKeyAndVisible];
     
-    ViewController *vc = [[ViewController alloc] init];
-    ExpressNaviViewController *expressNaviVC = [[ExpressNaviViewController alloc] initWithRootViewController:vc];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    ViewController *vc = [[ViewController alloc] init];
+//    ExpressNaviViewController *expressNaviVC = [[ExpressNaviViewController alloc] initWithRootViewController:vc];
+    ExpressNaviViewController *expressNaviVC = [[ExpressNaviViewController alloc] initWithRootViewController:storyboard.instantiateInitialViewController];
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
     keyWindow.rootViewController = expressNaviVC;
     [keyWindow makeKeyAndVisible];

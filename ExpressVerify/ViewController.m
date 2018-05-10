@@ -11,6 +11,8 @@
 #import "HZBitScanViewController.h"
 #import "Global.h"
 #import "HZBitScanStyle.h"
+#import "FindExpressData.h"
+#import "NSDate+Express.h"
 
 @interface ViewController ()<HZBitScannerViewDelegate>
 
@@ -48,9 +50,6 @@
     [self.navigationController pushViewController:hzBitScannVC animated:YES];
 }
 
-static NSURLSessionDataTask * extracted(NSDictionary *dict, FindExpressViewModel *viewModel) {
-    return [viewModel startRequest:dict token:@""];
-}
 
 - (IBAction)verifyAction:(id)sender {
     NSString *numbers = self.expressTF.text;
@@ -59,16 +58,42 @@ static NSURLSessionDataTask * extracted(NSDictionary *dict, FindExpressViewModel
         return;
     }
     
+    [self.expressTF resignFirstResponder];
+    
     FindExpressModel *model = [[FindExpressModel alloc] init];
     model.numbers = numbers;
     NSDictionary *dict = [model dictionary];
     
+    ExpressWeakSelf();
     FindExpressViewModel *viewModel = [[FindExpressViewModel alloc] init];
     viewModel.bitSuccessBlock = ^(ExpressViewModel *returnValue) {
-        
+        FindExpressViewModel *vm = (FindExpressViewModel *)returnValue;
+        [weakSelf showNumbers:vm.findExpressData];
     };
-    [viewModel startRequest:dict token:@""];
+    [viewModel startRequest:dict];
     
+}
+
+- (void)showNumbers:(FindExpressData *)data {
+    if (!data) {
+        return;
+    }
+    
+    __block NSString *result = @"";
+    result = [result stringByAppendingFormat:@"寄件人区: %@\n", data.divisionName];
+    result = [result stringByAppendingFormat:@"寄件人地址: %@\n", data.policeStationName];
+    result = [result stringByAppendingFormat:@"快递单号: %@\n", data.expressNumber];
+    result = [result stringByAppendingFormat:@"寄件人号码: %@\n", data.phoneNumber];
+    result = [result stringByAppendingFormat:@"收件人号码: %@\n", data.receiverMobilephone];
+    result = [result stringByAppendingFormat:@"收件人省 :%@\n", data.province];
+    result = [result stringByAppendingFormat:@"收件人城市 :%@\n", data.city];
+    result = [result stringByAppendingFormat:@"收件人区 :%@\n", data.county];
+    result = [result stringByAppendingFormat:@"收件人街道 :%@\n", data.street];
+    result = [result stringByAppendingFormat:@"收件人地址 :%@\n", data.address];
+    long long time = data.createDate.longLongValue / 1000;
+    NSString *timeStr = [NSString stringWithFormat:@"%ld", time];
+    result = [result stringByAppendingFormat:@"收件人时间 :%@\n", [NSDate dateFromTime:timeStr]];
+    self.verifyResultTV.text = result;
 }
 
 #pragma mark

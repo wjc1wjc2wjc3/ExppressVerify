@@ -31,6 +31,8 @@
 		1864E5BB20A31989003670DE /* UIAlertView+Express.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E5B820A31988003670DE /* UIAlertView+Express.m */; };
 		1864E5BE20A319A6003670DE /* UIWindow+Express.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E5BD20A319A5003670DE /* UIWindow+Express.m */; };
 		1864E5C120A31AA7003670DE /* ViewControllerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E5C020A31AA7003670DE /* ViewControllerUtils.m */; };
+		1864E5C720A3D87F003670DE /* FindExpressData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E5C620A3D87F003670DE /* FindExpressData.m */; };
+		1864E5CA20A3DD80003670DE /* NSDate+Express.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864E5C820A3DD80003670DE /* NSDate+Express.m */; };
 		18AADA2220A2EF7400C9B411 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AADA2120A2EF7400C9B411 /* AppDelegate.m */; };
 		18AADA2520A2EF7400C9B411 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18AADA2420A2EF7400C9B411 /* ViewController.m */; };
 		18AADA2820A2EF7400C9B411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AADA2620A2EF7400C9B411 /* Main.storyboard */; };
@@ -93,6 +95,10 @@
 		1864E5BD20A319A5003670DE /* UIWindow+Express.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Express.m"; sourceTree = "<group>"; };
 		1864E5BF20A31AA7003670DE /* ViewControllerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerUtils.h; path = ExpressVerify/Base/Categories/ViewControllerUtils.h; sourceTree = SOURCE_ROOT; };
 		1864E5C020A31AA7003670DE /* ViewControllerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerUtils.m; path = ExpressVerify/Base/Categories/ViewControllerUtils.m; sourceTree = SOURCE_ROOT; };
+		1864E5C520A3D87F003670DE /* FindExpressData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FindExpressData.h; sourceTree = "<group>"; };
+		1864E5C620A3D87F003670DE /* FindExpressData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindExpressData.m; sourceTree = "<group>"; };
+		1864E5C820A3DD80003670DE /* NSDate+Express.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Express.m"; sourceTree = "<group>"; };
+		1864E5C920A3DD80003670DE /* NSDate+Express.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Express.h"; sourceTree = "<group>"; };
 		18AADA1D20A2EF7400C9B411 /* ExpressVerify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpressVerify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AADA2020A2EF7400C9B411 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18AADA2120A2EF7400C9B411 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -154,6 +160,8 @@
 		1864E51F20A30006003670DE /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				1864E5C920A3DD80003670DE /* NSDate+Express.h */,
+				1864E5C820A3DD80003670DE /* NSDate+Express.m */,
 				1864E55F20A30F2A003670DE /* NSData+Express.h */,
 				1864E55E20A30F29003670DE /* NSData+Express.m */,
 				1864E55B20A30EFB003670DE /* NSString+Express.h */,
@@ -249,6 +257,8 @@
 		1864E57D20A311A9003670DE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				1864E5C520A3D87F003670DE /* FindExpressData.h */,
+				1864E5C620A3D87F003670DE /* FindExpressData.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -548,6 +558,7 @@
 				1864E59720A311C1003670DE /* ExpressNaviViewController.m in Sources */,
 				1864E55120A30A4C003670DE /* UIImage+Express.m in Sources */,
 				1864E5B320A317CA003670DE /* HZBitScanPermissions.m in Sources */,
+				1864E5CA20A3DD80003670DE /* NSDate+Express.m in Sources */,
 				1864E55D20A30EFB003670DE /* NSString+Express.m in Sources */,
 				18AADA2520A2EF7400C9B411 /* ViewController.m in Sources */,
 				1864E59920A311C1003670DE /* ExpressViewModel.m in Sources */,
@@ -564,6 +575,7 @@
 				1864E5B220A317CA003670DE /* HZBitAlertAction.m in Sources */,
 				18AADA2220A2EF7400C9B411 /* AppDelegate.m in Sources */,
 				1864E5BA20A31989003670DE /* UIActionSheet+Express.m in Sources */,
+				1864E5C720A3D87F003670DE /* FindExpressData.m in Sources */,
 				1864E59520A311C1003670DE /* ExpressModel.m in Sources */,
 				1864E5B420A317CA003670DE /* HZBitScanStyle.m in Sources */,
 				1864E55720A30B95003670DE /* StatusBarUtils.m in Sources */,
