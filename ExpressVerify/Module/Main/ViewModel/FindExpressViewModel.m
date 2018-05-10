@@ -23,13 +23,19 @@
     return [APIManager SafeGET:url parameters:param success:^(NSURLSessionDataTask * _Nullable task, id  _Nullable responseObject) {
         
             FindExpressViewModel *viewModel = [[FindExpressViewModel alloc] initWithDictionary:responseObject];
-            if (viewModel.message) {
-                [MBManager showBriefAlert:viewModel.message];
-            }
+
             if (viewModel && viewModel.status == 1) {
+                if (viewModel.message) {
+                    [MBManager showBriefAlert:viewModel.message];
+                }
                 if (self.bitSuccessBlock) {
                     self.bitSuccessBlock(viewModel);
                 }
+                
+            }
+            else if (viewModel.status == 0)
+            {
+                [MBManager showBriefAlert:@"没有此快递单号的信息"];
             }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {

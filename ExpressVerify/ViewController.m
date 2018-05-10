@@ -59,6 +59,7 @@
     }
     
     [self.expressTF resignFirstResponder];
+    self.verifyResultTV.text = @"";
     
     FindExpressModel *model = [[FindExpressModel alloc] init];
     model.numbers = numbers;
