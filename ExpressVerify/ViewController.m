@@ -91,7 +91,7 @@
     result = [result stringByAppendingFormat:@"收件人街道 :%@\n", data.street];
     result = [result stringByAppendingFormat:@"收件人地址 :%@\n", data.address];
     long long time = data.createDate.longLongValue / 1000;
-    NSString *timeStr = [NSString stringWithFormat:@"%ld", time];
+    NSString *timeStr = [NSString stringWithFormat:@"%lld", time];
     result = [result stringByAppendingFormat:@"收件人时间 :%@\n", [NSDate dateFromTime:timeStr]];
     self.verifyResultTV.text = result;
 }
