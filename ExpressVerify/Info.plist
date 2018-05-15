@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>4</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -28,7 +28,9 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>e锁需要使用您的摄像头，来扫描快递单号，拍照等功能</string>
+	<string>寄递哥核验需要使用您的摄像头，来扫描快递单号，拍照等功能</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>寄递哥核验需要访问您的相册</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -35,10 +35,12 @@ typedef NS_OPTIONS(NSUInteger, NaviType) {
 - (ExpressNavigationBar *)addNavigaBar:(NSString *)leftImageName {
     CGFloat statusBarHeight = [StatusBarUtils getStatusHeight];
     CGFloat startY = 0;
+    CGFloat navigationHeight = statusBarHeight;
     if (@available(iOS 11.0, *)) {
         startY = statusBarHeight;
+        navigationHeight = 0;
     }
-    ExpressNavigationBar *expressNavigationBar = [[ExpressNavigationBar alloc] initWithFrame:CGRectMake(0, startY, kScreenWidth, NAVIGATIONBAR_HEIGHT + statusBarHeight) image:leftImageName];
+    ExpressNavigationBar *expressNavigationBar = [[ExpressNavigationBar alloc] initWithFrame:CGRectMake(0, startY, kScreenWidth, NAVIGATIONBAR_HEIGHT + navigationHeight) image:leftImageName];
     expressNavigationBar.exDelegate = self;
     [self.view addSubview:expressNavigationBar];
     
