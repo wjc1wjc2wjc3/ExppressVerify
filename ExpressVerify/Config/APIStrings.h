@@ -9,6 +9,7 @@
 #define APIStrings_h
 
 static NSString* const URI_EXPRESS_SERVER  =  @"http://kydee.national-info.com:8181/api/";
+static NSString* const URI_EXPRESS_SERVER_CITY  =  @"http://wzkydee.national-info.com:8181/api/"; //市区
 
 static NSString* const URI_ROOT = @"";
 

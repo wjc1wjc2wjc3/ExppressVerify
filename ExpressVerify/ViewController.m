@@ -60,6 +60,10 @@
     
     [self.expressTF resignFirstResponder];
     self.verifyResultTV.text = @"";
+    [self startFind:numbers city:YES];
+}
+
+- (void)startFind:(NSString *)numbers city:(BOOL)bCity {
     
     FindExpressModel *model = [[FindExpressModel alloc] init];
     model.numbers = numbers;
@@ -67,9 +71,20 @@
     
     ExpressWeakSelf();
     FindExpressViewModel *viewModel = [[FindExpressViewModel alloc] init];
+    viewModel.bCity = bCity;
     viewModel.bitSuccessBlock = ^(ExpressViewModel *returnValue) {
         FindExpressViewModel *vm = (FindExpressViewModel *)returnValue;
         [weakSelf showNumbers:vm.findExpressData];
+    };
+    __block FindExpressViewModel *vm = viewModel;
+    viewModel.bitFailureBlock = ^(ExpressViewModel *errorCode) {
+        if (vm.bCity) {
+            [weakSelf startFind:numbers city:NO];
+        }
+        else
+        {
+            [MBManager showBriefAlert:@"没有此快递单号的信息"];
+        }
     };
     [viewModel startRequest:dict];
     

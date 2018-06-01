@@ -35,7 +35,10 @@
             }
             else if (viewModel.status == 0)
             {
-                [MBManager showBriefAlert:@"没有此快递单号的信息"];
+//                [MBManager showBriefAlert:@"没有此快递单号的信息"];
+                if (self.bitFailureBlock) {
+                    self.bitFailureBlock(viewModel);
+                }
             }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nullable error) {

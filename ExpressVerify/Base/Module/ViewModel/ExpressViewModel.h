@@ -15,6 +15,7 @@ typedef void (^BitFailureBlock)(ExpressViewModel *errorCode);
 
 @interface ExpressViewModel : NSObject
 
+@property (nonatomic, assign) BOOL bCity;
 @property (nonatomic, copy)   NSString *message;
 @property (nonatomic, copy)   NSString *resource;
 @property (nonatomic, assign) NSInteger code;

@@ -13,6 +13,13 @@ static NSString *baseUri = @"";
 
 - (NSString *)formatUrl:(NSString *)funcName {
     NSString *baseUriPrex = URI_EXPRESS_SERVER;
+    if (self.bCity) {
+        baseUriPrex = URI_EXPRESS_SERVER_CITY;
+    }
+    else
+    {
+        baseUriPrex = URI_EXPRESS_SERVER;
+    }
     NSString *url = [NSString stringWithFormat:@"%@%@", baseUriPrex, funcName];
     if ([@"" isEqualToString:baseUri]) {
         baseUri = [NSString stringWithFormat:@"%@", baseUriPrex];
