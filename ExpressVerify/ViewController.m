@@ -95,20 +95,23 @@
         return;
     }
     
-    __block NSString *result = @"";
-    result = [result stringByAppendingFormat:@"寄件人区: %@\n", data.divisionName];
-    result = [result stringByAppendingFormat:@"寄件人地址: %@\n", data.policeStationName];
-    result = [result stringByAppendingFormat:@"快递单号: %@\n", data.expressNumber];
-    result = [result stringByAppendingFormat:@"寄件人号码: %@\n", data.phoneNumber];
-    result = [result stringByAppendingFormat:@"收件人号码: %@\n", data.receiverMobilephone];
-    result = [result stringByAppendingFormat:@"收件人省 :%@\n", data.province];
-    result = [result stringByAppendingFormat:@"收件人城市 :%@\n", data.city];
-    result = [result stringByAppendingFormat:@"收件人区 :%@\n", data.county];
-    result = [result stringByAppendingFormat:@"收件人街道 :%@\n", data.street];
-    result = [result stringByAppendingFormat:@"收件人地址 :%@\n", data.address];
+    NSMutableString *result = [NSMutableString stringWithString:@"核验结果:\n"];
+    [result appendString:@"\t该快递已于"];
     long long time = data.createDate.longLongValue / 1000;
     NSString *timeStr = [NSString stringWithFormat:@"%lld", time];
-    result = [result stringByAppendingFormat:@"收件人时间 :%@\n", [NSDate dateFromTime:timeStr]];
+    [result appendFormat:@"%@", [NSDate dateFromTime:timeStr]];
+    [result appendString:@"实名比对"];
+//    result = [result stringByAppendingFormat:@"寄件人区: %@\n", data.divisionName];
+//    result = [result stringByAppendingFormat:@"寄件人地址: %@\n", data.policeStationName];
+//    result = [result stringByAppendingFormat:@"快递单号: %@\n", data.expressNumber];
+//    result = [result stringByAppendingFormat:@"寄件人号码: %@\n", data.phoneNumber];
+//    result = [result stringByAppendingFormat:@"收件人号码: %@\n", data.receiverMobilephone];
+//    result = [result stringByAppendingFormat:@"收件人省 :%@\n", data.province];
+//    result = [result stringByAppendingFormat:@"收件人城市 :%@\n", data.city];
+//    result = [result stringByAppendingFormat:@"收件人区 :%@\n", data.county];
+//    result = [result stringByAppendingFormat:@"收件人街道 :%@\n", data.street];
+//    result = [result stringByAppendingFormat:@"收件人地址 :%@\n", data.address];
+
     self.verifyResultTV.text = result;
 }
 
